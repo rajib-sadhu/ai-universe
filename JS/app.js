@@ -101,7 +101,7 @@ async function modalDetails(id){
 
     document.getElementById('showModalDetailsLabel').innerText = ai.tool_name;
 
-    const aiDetails = document.getElementById('ai-details');
+    // const aiDetails = document.getElementById('ai-details');
     // phoneDetails.innerHTML=`
     //         <div class="d-flex gap-4">
     //             <div class="w-50">
