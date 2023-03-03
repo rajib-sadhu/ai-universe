@@ -93,13 +93,19 @@ function isLoadingToggle (isLoad){
 function isLoadingModal (isLoad){
     
 
-    const modal = document.getElementById('modal-main');
+    const modalLoad = document.getElementById('isModalLoading');
+    const modalHead = document.getElementById('modal-head');
+    const modalDetails = document.getElementById('ai-details');
 
     if(isLoad){
-        modal.classList.add('d-none');
+        modalLoad.classList.remove('d-none');
+        modalHead.classList.add('d-none');
+        modalDetails.classList.add('d-none');
     }
     else{
-        modal.classList.remove('d-none');
+        modalLoad.classList.add('d-none');
+        modalHead.classList.remove('d-none');
+        modalDetails.classList.remove('d-none');
     }
 }
 

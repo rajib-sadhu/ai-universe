@@ -44,9 +44,17 @@
          <!-- Modal Content -->
          <section class="container">
             <div class="modal fade" id="showModalDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="showModalDetailsLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl" id="modal-main">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <!-- Modal Loading -->
+                    <section id="isModalLoading" class="d-none">
+                        <div style="height: 300px;" class="d-flex align-items-center justify-content-center">
+                            <div style="color: #e6324b;" class="spinner-border" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
+                          </div>
+                    </section>
+                    <div class="modal-header" id="modal-head">
                     <h1 class="modal-title fs-5" id="showModalDetailsLabel">Title</h1>
                     <button type="button" class="modal-btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                     </div>
