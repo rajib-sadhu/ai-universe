@@ -49,3 +49,18 @@
     right: -16px;
     top:-16px
 }
+
+
+.price-btn{
+    width: 5rem;
+    height: 5rem;
+    background-color: #ffc6a5;
+    text-align: center;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.price-btn button{
+    font-size: 10px;
+}
