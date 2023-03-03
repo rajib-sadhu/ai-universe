@@ -11,8 +11,16 @@ const loadData = async (dataLimit) =>{
    try{
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data.data.tools)
-    displayData(data.data.tools, dataLimit);
+    const json = data.data.tools;
+
+    // sort Data
+    document.getElementById('sort-data').addEventListener('click', ()=>{
+        json.sort((a, b) => new Date(a.published_in) - new Date(b.published_in));
+        displayData(json, dataLimit);
+    })
+
+
+    displayData(json, dataLimit);
    }
    catch(error){
     console.error(error);
@@ -177,7 +185,4 @@ async function modalDetails(id){
 }
 
 
-
 loadData(6);
-
-
