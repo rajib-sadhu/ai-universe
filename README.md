@@ -1,9 +1,9 @@
 # AI-universe-hub
 
 ### Live Site Link
-Netlify - Live Site [private repo](https://fantastic-manatee-21b828.netlify.app/)
+Netlify - [Live Site](https://fantastic-manatee-21b828.netlify.app/)
 
-Surge - Live Site [private repo](https://complete-question.surge.sh/)
+Surge - [Live Site](https://complete-question.surge.sh/)
 
 ### Private Repo Link
 Click Here to create [private repo](https://classroom.github.com/a/dhefyS56)
