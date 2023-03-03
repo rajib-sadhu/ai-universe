@@ -17,7 +17,7 @@
         <button class="btn primary-btn mt-2" >Sort By Date</button>
     </header>
 
-    <main>
+    <main class="container">
 
         <!-- Loading section -->
         <section id="isLoading" class="d-none">
@@ -29,7 +29,7 @@
         </section>
 
         <!-- display API data Section -->
-        <section class="container my-5">
+        <section class="my-5">
             <div class="row row-cols-1 row-cols-md-3 g-5" id="ai-container">
             </div>
 
@@ -37,6 +37,22 @@
                 <button id="btn-show-all" class="btn primary-btn">Show All</button>
             </div>
         </section>
+
+          <!-- Modal Content -->
+            <section>
+            <div class="modal fade" id="showModalDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="showModalDetailsLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="showModalDetailsLabel">Title</h1>
+                    <button type="button" class="modal-btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div id="ai-details" class="modal-body">
+                    </div>
+                </div>
+                </div>
+            </div>
+            </section>
 
         
 

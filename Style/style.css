@@ -13,13 +13,13 @@
 
 .arrow-btn{
     position: absolute;
-    right: 20px;
-    bottom: -2px;
+    right: 22px;
+    bottom: 4px;
     color: #ffc6a5;
     font-size: 2rem;
+    background-color: transparent;
+    border: none;
 }
-
-
 .arrow-btn:hover{
     transition: all .2s ease-in-out;
     transform: rotate(-15deg) translate(8px);
@@ -36,4 +36,16 @@
 .features-list{
     margin-left: 20px;
     margin-bottom: -15px;
+}
+
+.modal-btn{
+    background-color: #e6324b;
+    color: #ffc6a5;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: -16px;
+    top:-16px
 }
