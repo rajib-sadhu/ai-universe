@@ -1,0 +1,39 @@
+
+
+
+.primary-btn{
+    background-color: #e6324b;
+    color: white;
+}
+
+.primary-btn:hover{
+    background-color: #800011;
+    color: white;
+}
+
+.arrow-btn{
+    position: absolute;
+    right: 20px;
+    bottom: -2px;
+    color: #ffc6a5;
+    font-size: 2rem;
+}
+
+
+.arrow-btn:hover{
+    transition: all .2s ease-in-out;
+    transform: rotate(-15deg) translate(8px);
+    filter: drop-shadow(12px 5px 5px #2b2b2b);
+    color: #ffc6a5;
+}
+
+.ai-image:hover{
+    transition: all .3s ease-in;
+    transform: scale(1.3) translateY(15px);
+    box-shadow: 0px 2px 8px rgb(43, 43, 43, 0.8);
+}
+
+.features-list{
+    margin-left: 20px;
+    margin-bottom: -15px;
+}

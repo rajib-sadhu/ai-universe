@@ -1,16 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Universe Hub - Assignment 6</title>
+
+<!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AI Universe Hub - Assignment 6</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Style/style.css">
 </head>
 <body>
 
 
+    <header class="text-center py-5">
+        <h1>AI Universe Hub</h1>
+        <button class="btn primary-btn mt-2" >Sort By Date</button>
+    </header>
+
+    <main>
+
+        <!-- Loading section -->
+        <section id="isLoading" class="d-none">
+            <div style="height: 300px;" class="d-flex align-items-center justify-content-center">
+                <div style="color: #e6324b;" class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+        </section>
+
+        <!-- display API data Section -->
+        <section class="container my-5">
+            <div class="row row-cols-1 row-cols-md-3 g-5" id="ai-container">
+            </div>
+
+            <div id="show-all" class="text-center mt-3 d-none">
+                <button id="btn-show-all" class="btn primary-btn">Show All</button>
+            </div>
+        </section>
+
+        
+
+    </main>
 
 
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="./JS/app.js"></script>
 
     
