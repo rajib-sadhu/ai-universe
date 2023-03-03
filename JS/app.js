@@ -89,11 +89,24 @@ function isLoadingToggle (isLoad){
 
     }
 }
+// API data Loading for modal
+function isLoadingModal (isLoad){
+    
+
+    const modal = document.getElementById('modal-main');
+
+    if(isLoad){
+        modal.classList.add('d-none');
+    }
+    else{
+        modal.classList.remove('d-none');
+    }
+}
 
 // Show Modal Details
 async function modalDetails(id){
 
-    isLoadingToggle(true)
+    isLoadingModal(true)
     const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -154,6 +167,7 @@ async function modalDetails(id){
         </div>
 
     `;
+    isLoadingModal(false)
 }
 
 
