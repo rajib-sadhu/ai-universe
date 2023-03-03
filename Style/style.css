@@ -54,13 +54,27 @@
 .price-btn{
     width: 5rem;
     height: 5rem;
-    background-color: #ffc6a5;
+    background-color: #ffffff;
     text-align: center;
-    padding: 15px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
-.price-btn button{
+
+.price-btn .plans{
+    font-size: 16px;
+}
+.price-btn p{
+    padding-top: 15px;
     font-size: 10px;
+    font-weight: 700;
+}
+
+.btn-badge{
+    position: absolute;
+    right: 65px;
+    top: 80px;
+    /* padding: 5px ; */
 }
