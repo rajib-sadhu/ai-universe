@@ -33,9 +33,15 @@
     box-shadow: 0px 2px 8px rgb(43, 43, 43, 0.8);
 }
 
+/* featurs list */
 .features-list{
     margin-left: 20px;
-    margin-bottom: -15px;
+}
+
+
+/* Modal Div */
+.modal-div{
+    display: flex;
 }
 
 .modal-btn{
@@ -78,11 +84,11 @@
 }
 
 
-.modal-div{
-    display: flex;
-}
 
 
+
+
+/* Responsive Style */
 
 @media (max-width:576px) {
     

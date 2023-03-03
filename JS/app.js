@@ -44,22 +44,23 @@ const displayData = (data, dataLimit) =>{
         const aiDiv = document.createElement('div');
         aiDiv.classList.add('col');
 
-        const features = ai.features;
+        // const features = ai.features;
+        const {features, image , name, id, published_in } = ai;
         
         aiDiv.innerHTML=`
         
         <div style="background-color: #ffc6a5;" class="card h-100 shadow-lg overflow-hidden">
-          <img src= "${ai.image}" class="card-img-top img-fluid ai-image " alt="AI Image">
+          <img src= "${image}" class="card-img-top img-fluid ai-image " alt="AI Image">
           <div class="card-body mb-3">
-            <h3 class="card-title text-center pb-2">${ai.name}</h3>
+            <h3 class="card-title text-center pb-2">${name}</h3>
             <h5>Features</h5>
             <ul class="list-group">
-            ${ features.map(val => `<li class="features-list" >${val.slice(0,-1)}</li>`) }
+            ${ (features.map(val => `<li class="features-list" >${val}</li>`)).join(' ') }
             </ul>
           </div>
           <div style="background-color: #e6324b;" class="card-footer py-3">
-              <small class="text-light"> <i class="fa-regular fa-calendar-days"></i> Published: ${ai.published_in}</small>
-              <button onclick="modalDetails('${ai.id}')" class="arrow-btn" data-bs-toggle="modal" data-bs-target="#showModalDetails" ><i class="fa-solid fa-location-arrow"></i></button>
+              <small class="text-light"> <i class="fa-regular fa-calendar-days"></i> Published: ${published_in}</small>
+              <button onclick="modalDetails('${id}')" class="arrow-btn" data-bs-toggle="modal" data-bs-target="#showModalDetails" ><i class="fa-solid fa-location-arrow"></i></button>
             </div>
         </div>
         `;
@@ -100,7 +101,6 @@ async function modalDetails(id){
     const ai = data.data;
     const features = Object.values(ai.features);
 
-    console.log(ai.pricing==null)
 
     document.getElementById('showModalDetailsLabel').innerText = ai.tool_name;
 
@@ -129,13 +129,13 @@ async function modalDetails(id){
                     <div>
                         <h6>Features</h6>
                         <ul>
-                        ${ features? features.map(val => `<li class="features-list" >${val.feature_name}</li>`) : "Not Found" }
+                        ${ features? features.map(val => `<li class="" >${val.feature_name}</li>`).join(' ') : "Not Found" }
                         </ul> 
                     </div> 
                     <div>
                         <h6>Integration</h6>
                         <ul>
-                        ${ ai.integrations? ai.integrations.map(val => `<li class="features-list" >${val}</li>`) : "Not Found" }
+                        ${ ai.integrations? ai.integrations.map(val => `<li class="" >${val}</li>`).join(' ') : "Not Found" }
                         </ul>
                     </div>
                 </div>
@@ -154,8 +154,6 @@ async function modalDetails(id){
         </div>
 
     `;
-    
-
 }
 
 
