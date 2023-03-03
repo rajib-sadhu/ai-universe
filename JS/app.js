@@ -93,6 +93,7 @@ function isLoadingToggle (isLoad){
 // Show Modal Details
 async function modalDetails(id){
 
+    isLoadingToggle(true)
     const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -113,13 +114,13 @@ async function modalDetails(id){
 
                 <div class="mt-3 d-flex flex-column gap-2">
                    <div class="price-btn bg-success">
-                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[0].plan +' - '+ ai.pricing[0].price? (ai.pricing[0].price!=0? ai.pricing[0].price : "Free of cost") : 'Free of cost' }  </p>
+                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[0].price? (ai.pricing[0].price!=0? 'Basic - ' + ai.pricing[0].price : "Free of cost") : 'Free of cost' }  </p>
                    </div>
                    <div class="price-btn bg-warning">
-                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[1].plan +' - '+ ai.pricing[1].price? (ai.pricing[1].price!=0? ai.pricing[1].price : "Free of cost") : 'Free of cost' }  </p>
+                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' :  ai.pricing[1].price? (ai.pricing[1].price!=0? 'Pro - '+ ai.pricing[1].price : "Free of cost") : 'Free of cost' }  </p>
                    </div>
                    <div class="price-btn bg-danger">
-                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[2].plan +' - '+ ai.pricing[2].price? (ai.pricing[2].price!=0? ai.pricing[2].price : "Free of cost") : 'Free of cost' }  </p>
+                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' :  ai.pricing[2].price? (ai.pricing[2].price!=0? 'Enterprise - '+ ai.pricing[2].price : "Free of cost") : 'Free of cost' }  </p>
                      
                 </div>
                 </div>
