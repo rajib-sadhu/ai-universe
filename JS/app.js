@@ -107,7 +107,7 @@ async function modalDetails(id){
 
     aiDetails.innerHTML=`
 
-            <div class="row gap-4 p-5 modal-div">
+            <div class="row gap-4 p-lg-5 p-md-2 modal-div">
             <div style="background-color: #ffdcc7; border: 1px solid #e6324b;" class="col p-3 rounded">
                 <h6>${ ai.description ? ai.description : "No Description" }</h6>
 
