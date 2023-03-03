@@ -44,7 +44,6 @@ const displayData = (data, dataLimit) =>{
         const aiDiv = document.createElement('div');
         aiDiv.classList.add('col');
 
-        // const features = ai.features;
         const {features, image , name, id, published_in } = ai;
         
         aiDiv.innerHTML=`
