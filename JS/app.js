@@ -96,30 +96,70 @@ async function modalDetails(id){
     const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     const ai = data.data;
+    const features = Object.values(ai.features);
+
+    console.log(ai.pricing==null)
 
     document.getElementById('showModalDetailsLabel').innerText = ai.tool_name;
 
-    // const aiDetails = document.getElementById('ai-details');
-    // phoneDetails.innerHTML=`
-    //         <div class="d-flex gap-4">
-    //             <div class="w-50">
-    //             <img src="${phone.image}" class="img-fluid">
-    //             </div>
-    //             <div>
-    //                 <p> Release Date : ${ phone.releaseDate? phone.releaseDate : 'Release date not found' } </p>
-    //                 <p> Brand : ${ phone.brand? phone.brand : 'Brand name not found' } </p>
-    //                 <p> Memory : ${ phone.mainFeatures.memory? phone.mainFeatures.memory : 'Not found' } </p>
-    //                 <p> Display size : ${ phone.mainFeatures.displaySize ? phone.mainFeatures.displaySize : 'Not found' } </p>
-    //                 <p> Storage : ${ phone.mainFeatures.storage ? phone.mainFeatures.storage : 'Not found' } </p>
-    //             </div>
-    //         </div>
-            
-    // `;
+    const aiDetails = document.getElementById('ai-details');
+
+    aiDetails.innerHTML=`
+
+            <div class="row gap-4 p-5 modal-div">
+            <div style="background-color: #ffdcc7; border: 1px solid #e6324b;" class="col p-3 rounded">
+                <h6>${ ai.description ? ai.description : "No Description" }</h6>
+
+                <div class="mt-3 d-flex flex-column gap-2">
+                   <div class="price-btn bg-success">
+                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[0].plan +' - '+ ai.pricing[0].price? (ai.pricing[0].price!=0? ai.pricing[0].price : "Free of cost") : 'Free of cost' }  </p>
+                   </div>
+                   <div class="price-btn bg-warning">
+                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[1].plan +' - '+ ai.pricing[1].price? (ai.pricing[1].price!=0? ai.pricing[1].price : "Free of cost") : 'Free of cost' }  </p>
+                   </div>
+                   <div class="price-btn bg-danger">
+                   <p class="plans"> ${ai.pricing==null? 'Free of Cost' : ai.pricing[2].plan +' - '+ ai.pricing[2].price? (ai.pricing[2].price!=0? ai.pricing[2].price : "Free of cost") : 'Free of cost' }  </p>
+                     
+                </div>
+                </div>
+
+                <div class=" d-flex justify-content-around mt-3">
+                    <div>
+                        <h6>Features</h6>
+                        <ul>
+                        ${ features? features.map(val => `<li class="features-list" >${val.feature_name}</li>`) : "Not Found" }
+                        </ul> 
+                    </div> 
+                    <div>
+                        <h6>Integration</h6>
+                        <ul>
+                        ${ ai.integrations? ai.integrations.map(val => `<li class="features-list" >${val}</li>`) : "Not Found" }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" p-1 col">
+                <div class="d-flex justify-content-center">
+                ${ai.accuracy.score? `<span class="badge bg-danger btn-badge">  ${ai.accuracy.score*100}% Accuracy </span>`: ""}
+                    <img style="height: 15rem;" class="img-fluid rounded" src="${ai.image_link[0]}" alt="Ai Image">
+                </div>
+                <div class="mt-3 text-center">
+                     ${ ai.input_output_examples==null? `<p>No! Not Yet! Take a break!!!</p>` : (`<h6>${ai.input_output_examples[0].input ? ai.input_output_examples[0].input : "Can you give any example?" }</h6><p style="font-size: 16px;">${ai.input_output_examples[0].output? ai.input_output_examples[0].output : 'No! Not Yet! Take a break!!!'}</p>`)} 
+
+                </div>
+            </div>
+        </div>
+
+    `;
+    
 
 }
 
 
 
 loadData(6);
+
+
